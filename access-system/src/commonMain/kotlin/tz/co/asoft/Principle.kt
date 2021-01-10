@@ -13,8 +13,8 @@ sealed class Principle : IPrinciple {
 
     @Serializable
     data class ClientAppPrinciple(
-        val app: ClientApp,
+        override val app: ClientApp,
         override val account: UserAccount,
         override val claims: List<String>
-    ) : Principle()
+    ) : Principle(), IClientAppPrinciple
 }

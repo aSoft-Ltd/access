@@ -1,6 +1,6 @@
 job("Build & Test Project") {
     startOn {
-        gitPush {
+        codeReviewOpened {
             enabled = true
             branchFilter {
                 +"refs/heads/master-dev"

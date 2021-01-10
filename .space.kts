@@ -1,10 +1,13 @@
 job("Build & Test Project") {
-    startOn {
-        codeReviewOpened {
-            enabled = true
+    container("ubuntu:21.04", "build") {
+        kotlinScript { api ->
+            if (api.gitBranch() == "refs/heads/master-dev") {
+                api.gradlew("build")
+            } else {
+                println("Code submitted")
+            }
         }
     }
-    gradlew("openjdk:11", "build")
 }
 
 job("Deploy Project") {
@@ -16,5 +19,5 @@ job("Deploy Project") {
             }
         }
     }
-    gradlew("openjdk:11", "publish")
+    gradlew("gradle:6.7.1-jdk11", "publish")
 }

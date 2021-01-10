@@ -2,12 +2,9 @@ job("Build & Test Project") {
     startOn {
         codeReviewOpened {
             enabled = true
-            branchFilter {
-                +"refs/heads/master-dev"
-            }
         }
     }
-    gradlew("openjdk:11", "build")
+    gradlew("build")
 }
 
 job("Deploy Project") {
@@ -19,5 +16,5 @@ job("Deploy Project") {
             }
         }
     }
-    gradlew("openjdk:11", "publish")
+    gradlew("publish")
 }

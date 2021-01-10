@@ -1,14 +1,28 @@
-job("Build/Deploy Project") {
-    container("gradle:6.7.1-jdk11") {
-        kotlinScript { api ->
-            when {
-                api.gitBranch() == "refs/heads/master" -> {
-                    api.gradlew(":publish")
-                }
-                api.gitBranch() == "refs/heads/master-dev" -> {
-                    api.gradlew("build")
-                }
+job("Build & Test Project") {
+    startOn {
+        gitPush {
+            enabled = true
+            branchFilter {
+                +"refs/heads/master-dev"
             }
+        }
+    }
+    gradlew("openjdk:11", "build")
+}
+
+job("Deploy Project") {
+    startOn {
+        gitPush {
+            enabled = true
+            branchFilter {
+                +"refs/heads/master"
+            }
+        }
+    }
+    gradlew("openjdk:11", "publish") {
+        kotlinScript { api ->
+            env["SPACE_USERNAME"] = api.spaceClientId()
+            env["SPACE_PASSWORD"] = api.spaceSecret()
         }
     }
 }

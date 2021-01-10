@@ -1,5 +1,5 @@
 job("Build & Test Project") {
-    container("markhobson/maven-chrome:jdk11") {
+    container("markhobson/maven-chrome:jdk-11") {
         kotlinScript { api ->
             if (api.gitBranch() == "refs/heads/master-dev") {
                 api.gradlew("build")
@@ -19,5 +19,5 @@ job("Deploy Project") {
             }
         }
     }
-    gradlew("markhobson/maven-chrome:jdk11", "publish")
+    gradlew("markhobson/maven-chrome:jdk-11", "publish")
 }

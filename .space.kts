@@ -4,11 +4,7 @@ job("Build & Test Project") {
             enabled = true
         }
     }
-<<<<<<< HEAD
     gradlew("openjdk:11", "build")
-=======
-    gradlew("build")
->>>>>>> d73755f4201f3d4dfac6c93855ec248236e2fc20
 }
 
 job("Deploy Project") {
@@ -20,9 +16,5 @@ job("Deploy Project") {
             }
         }
     }
-<<<<<<< HEAD
     gradlew("openjdk:11", "publish")
-=======
-    gradlew("publish")
->>>>>>> d73755f4201f3d4dfac6c93855ec248236e2fc20
 }

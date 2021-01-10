@@ -4,7 +4,7 @@ job("Build & Test Project") {
             enabled = true
         }
     }
-    gradlew("build")
+    gradlew("openjdk:11", "build")
 }
 
 job("Deploy Project") {
@@ -16,5 +16,5 @@ job("Deploy Project") {
             }
         }
     }
-    gradlew("publish")
+    gradlew("openjdk:11", "publish")
 }

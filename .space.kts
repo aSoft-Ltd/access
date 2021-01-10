@@ -1,5 +1,5 @@
 job("Build & Test Project") {
-    container("ubuntu:21.04", "build") {
+    container("ubuntu:21.04") {
         kotlinScript { api ->
             if (api.gitBranch() == "refs/heads/master-dev") {
                 api.gradlew("build")

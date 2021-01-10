@@ -19,10 +19,5 @@ job("Deploy Project") {
             }
         }
     }
-    gradlew("openjdk:11", "publish") {
-        kotlinScript { api ->
-            env["SPACE_USERNAME"] = api.spaceClientId()
-            env["SPACE_PASSWORD"] = api.spaceSecret()
-        }
-    }
+    gradlew("openjdk:11", "publish")
 }

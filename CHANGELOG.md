@@ -1,3 +1,6 @@
+# 0.0.13 : 2021.01.19
+- Updated persist from 0.0.12 to 0.
+
 # 0.0.1
 ## Availability
 - Published to maven central

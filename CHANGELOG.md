@@ -1,5 +1,5 @@
 # 0.0.13 : 2021.01.19
-- Updated persist from 0.0.12 to 0.
+- Updated persist from 0.0.12 to 0.2.10
 
 # 0.0.1
 ## Availability

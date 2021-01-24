@@ -9,12 +9,7 @@ data class SystemPermissionGroup(
         val DEV = SystemPermissionGroup(
             name = "System Developer",
             details = "Provide super powers to aid in developing the system",
-            permissions = setOf(
-                SystemPermission(
-                    name = "system.developer",
-                    details = "Grant's permissions to every action on the system (Should only be used in development)"
-                )
-            )
+            permissions = setOf(ISystemPermission.DEV)
         )
     }
 }

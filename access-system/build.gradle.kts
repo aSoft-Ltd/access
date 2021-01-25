@@ -2,10 +2,10 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("tz.co.asoft.library")
+    id("io.codearte.nexus-staging")
+    signing
 }
 
-group = "tz.co.asoft"
-version = vers.asoft.access
 
 kotlin {
     multiplatformLib()
@@ -27,14 +27,7 @@ kotlin {
     }
 }
 
-configurePublishing {
-    repositories {
-        maven("https://maven.pkg.jetbrains.space/asofttz/p/libs/maven") {
-            name = "space"
-            credentials {
-                username = System.getenv("SPACE_USERNAME")
-                password = System.getenv("SPACE_PASSWORD")
-            }
-        }
-    }
-}
+aSoftOSSLibrary(
+    version = vers.asoft.access,
+    description = "A Kotlin Multiplatform Library with entities required for access to different resources"
+)

@@ -1,14 +1,20 @@
-job("Build/Deploy Project") {
-    container("gradle:6.7.1-jdk11") {
-        kotlinScript { api ->
-            when {
-                api.gitBranch() == "refs/heads/master" -> {
-                    api.gradlew(":publish")
-                }
-                api.gitBranch() == "refs/heads/master-dev" -> {
-                    api.gradlew("build")
-                }
+job("Build & Test Project") {
+    startOn {
+        codeReviewOpened {
+            enabled = true
+        }
+    }
+    gradlew("markhobson/maven-chrome:jdk-11", "build")
+}
+
+job("Deploy Project") {
+    startOn {
+        gitPush {
+            enabled = true
+            branchFilter {
+                +"refs/heads/master"
             }
         }
     }
+    gradlew("markhobson/maven-chrome:jdk-11", "publish")
 }

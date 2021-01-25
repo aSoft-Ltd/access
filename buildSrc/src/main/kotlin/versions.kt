@@ -1,5 +1,6 @@
 object vers {
     val kotlin = "1.4.21"
+    val nexus_staging = "0.22.0"
 
     object kotlinx {
         val datetime = "0.1.1"

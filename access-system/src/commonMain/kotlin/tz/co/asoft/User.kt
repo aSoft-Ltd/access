@@ -60,6 +60,11 @@ data class User(
             title = "authentication.users.delete",
             details = "Grants access to delete users from the system",
             needs = listOf(Read.title)
+        ),
+        Wipe(
+            title = "authentication.users.wipe",
+            details = "Grants access to permanently wipe users from the system",
+            needs = listOf(Read.title)
         )
     }
 

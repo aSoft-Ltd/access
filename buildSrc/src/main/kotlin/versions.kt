@@ -12,5 +12,6 @@ object vers {
         val persist = "0.2.10"
         val builders = "1.3.0"
         val test = "1.1.10"
+        val expect = "0.0.10"
     }
 }

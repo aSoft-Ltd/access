@@ -39,6 +39,19 @@ class PrincipleTest {
     }
 
     @Test
+    fun should_pass_only_when_has_a_specific_privilege_from_a_pool_of_privilege() {
+        val principle = object : IPrinciple {
+            override val claims: Map<String, List<String>> = mapOf(
+                User.Permissions.Create.title to listOf("account(1235)", "account(2345)")
+            )
+            override val account = testAccount
+        }
+        expect(principle.has(User.Permissions.Create, "account(1235)")).toBe(true)
+        expect(principle.has(User.Permissions.Create, "account(123)")).toBe(false)
+        expect(principle.has(User.Permissions.Create, "account(2345)")).toBe(true)
+    }
+
+    @Test
     fun should_pass_for_any_account_if_has_a_global_privilege() {
         val principle = object : IPrinciple {
             override val claims: Map<String, List<String>> = mapOf(

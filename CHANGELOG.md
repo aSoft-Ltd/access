@@ -1,3 +1,7 @@
+# 0.0.20 : 2021.02.03
+- Modified the claims system
+- Now claims can take a list of values they hold true for
+
 # 0.0.14 : 2021.01.24
 - Added permissions to entities 
 

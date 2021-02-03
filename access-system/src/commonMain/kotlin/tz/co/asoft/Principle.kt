@@ -8,13 +8,13 @@ sealed class Principle : IPrinciple {
     data class UserPrinciple(
         override val user: User,
         override val account: UserAccount,
-        override val claims: List<String>
+        override val claims: Map<String, List<String>>
     ) : Principle(), IUserPrinciple
 
     @Serializable
     data class ClientAppPrinciple(
         override val app: ClientApp,
         override val account: UserAccount,
-        override val claims: List<String>
+        override val claims: Map<String, List<String>>
     ) : Principle(), IClientAppPrinciple
 }

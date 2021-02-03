@@ -13,11 +13,11 @@ data class UserAccount(
     val type: String,
     override var deleted: Boolean = false
 ) : NamedEntity {
-    data class Type(
-        val name: String,
-        val details: String,
+    interface Type {
+        val name: String
+        val details: String
         val permissionGroups: List<SystemPermissionGroup>
-    )
+    }
 
     enum class Permissions(
         override val title: String,

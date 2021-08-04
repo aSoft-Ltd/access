@@ -1,5 +1,7 @@
 package access.system
 
+import access.ISystemPermission
+import access.UserAccount
 import kotlinx.serialization.Serializable
 
 @Serializable

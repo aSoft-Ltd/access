@@ -1,4 +1,4 @@
-package access.system
+package access
 
 fun Collection<ISystemPermission>.hasPermit(name: String): Boolean {
     if (any { it.title == "system.developer" }) return true

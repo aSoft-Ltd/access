@@ -1,4 +1,4 @@
-package access.system
+package access
 
 fun SystemPermission(
     name: String,

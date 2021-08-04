@@ -1,7 +1,9 @@
 package access.system
 
-import access.system.ISystemPermission.Companion.denied
-import access.system.ISystemPermission.Companion.global
+import access.ISystemPermission
+import access.UserAccount
+import access.ISystemPermission.Companion.denied
+import access.ISystemPermission.Companion.global
 
 interface IPrinciple {
     val claims: Map<String, List<String>>

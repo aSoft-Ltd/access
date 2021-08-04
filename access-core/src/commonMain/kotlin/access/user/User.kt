@@ -1,7 +1,10 @@
 @file:UseSerializers(LongAsStringSerializer::class)
 
-package access.system
+package access.user
 
+import access.ISystemPermission
+import access.UserAccount
+import access.UserRef
 import contacts.Email
 import contacts.Phone
 import kotlinx.datetime.Clock

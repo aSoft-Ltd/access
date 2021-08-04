@@ -22,6 +22,7 @@ kotlin {
 
         val commonTest by getting {
             dependencies {
+                api(project(":access-system-client-test"))
                 implementation(asoft("expect-coroutines", vers.asoft.expect))
             }
         }

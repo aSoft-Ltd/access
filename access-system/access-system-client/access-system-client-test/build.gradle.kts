@@ -15,13 +15,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(project(":access-core"))
-            }
-        }
-
-        val commonTest by getting {
-            dependencies {
-                implementation(asoft("expect-core", vers.asoft.expect))
+                api(project(":access-system-client-core"))
             }
         }
     }
@@ -29,5 +23,5 @@ kotlin {
 
 aSoftOSSLibrary(
     version = vers.asoft.access,
-    description = "A Kotlin Multiplatform Library with entities required for access to different resources"
+    description = "A Kotlin Multiplatform Library for writting tests to access a system from any client"
 )

@@ -1,6 +1,6 @@
 @file:Suppress("PackageDirectoryMismatch")
 
-package access.system
+package access
 
 import kotlinx.serialization.Serializable
 

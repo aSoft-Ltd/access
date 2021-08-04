@@ -1,4 +1,4 @@
-package access.system
+package access
 
 data class SystemPermissionGroup(
     val name: String,

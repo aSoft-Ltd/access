@@ -21,3 +21,5 @@ project(":access-system-core").projectDir = File("access-system/access-system-co
 
 include(":access-system-client-core")
 project(":access-system-client-core").projectDir = File("access-system/access-system-client/access-system-client-core")
+include(":access-system-client-test")
+project(":access-system-client-test").projectDir = File("access-system/access-system-client/access-system-client-test")

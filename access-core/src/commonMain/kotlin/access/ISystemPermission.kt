@@ -1,4 +1,4 @@
-package access.system
+package access
 
 interface ISystemPermission {
     val title: String

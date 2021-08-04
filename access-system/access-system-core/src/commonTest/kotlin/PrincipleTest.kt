@@ -1,7 +1,7 @@
 import access.system.IPrinciple
-import access.system.User
-import access.system.ISystemPermission.Companion.global
-import access.system.UserAccount
+import access.user.User
+import access.ISystemPermission.Companion.global
+import access.UserAccount
 import expect.expect
 import kotlin.test.Test
 

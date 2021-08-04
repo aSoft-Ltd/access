@@ -8,12 +8,14 @@ plugins {
 
 
 kotlin {
-    multiplatformLib()
+    jvm { library() }
+    js(IR) { library() }
+    nativeTargets(false)
+
     sourceSets {
         val commonMain by getting {
             dependencies {
                 api("org.jetbrains.kotlinx:kotlinx-datetime:${vers.kotlinx.datetime}")
-                api(asoft("persist-core", vers.asoft.persist))
                 api(asoft("phone-core", vers.asoft.contacts))
                 api(asoft("email-core", vers.asoft.contacts))
             }
@@ -21,8 +23,7 @@ kotlin {
 
         val commonTest by getting {
             dependencies {
-                implementation(asoft("test-core", vers.asoft.test))
-                implementation(asoft("expect-core",vers.asoft.expect))
+                implementation(asoft("expect-core", vers.asoft.expect))
             }
         }
     }

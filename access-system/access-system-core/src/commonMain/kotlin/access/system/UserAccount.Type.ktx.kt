@@ -1,6 +1,4 @@
-@file:Suppress("PackageDirectoryMismatch")
-
-package tz.co.asoft
+package access.system
 
 fun UserAccount.Type.permissions() = permissionGroups.flatMap { it.permissions }
 

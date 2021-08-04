@@ -1,4 +1,4 @@
-import tz.co.asoft.SystemPermission
+import access.system.SystemPermission
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

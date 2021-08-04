@@ -1,8 +1,9 @@
-@file:Suppress("PackageDirectoryMismatch")
 @file:UseSerializers(LongAsStringSerializer::class)
 
-package tz.co.asoft
+package access.system
 
+import contacts.Email
+import contacts.Phone
 import kotlinx.datetime.Clock
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
@@ -10,8 +11,8 @@ import kotlinx.serialization.builtins.LongAsStringSerializer
 
 @Serializable
 data class User(
-    override var uid: String? = null,
-    override val name: String,
+    val uid: String,
+    val name: String,
     val password: String,
     val username: String? = null,
     val emails: List<String> = listOf(),
@@ -23,8 +24,8 @@ data class User(
     val verifiedPhones: List<String> = listOf(),
     val registeredOn: Long = Clock.System.now().toEpochMilliseconds(),
     val lastSeen: Long = Clock.System.now().toEpochMilliseconds(),
-    override var deleted: Boolean = false
-) : NamedEntity {
+    val deleted: Boolean = false
+) {
     init {
         if ((emails + phones).isEmpty()) throw Exception("A user must have a phone/email")
         emails.forEach { Email(it) }

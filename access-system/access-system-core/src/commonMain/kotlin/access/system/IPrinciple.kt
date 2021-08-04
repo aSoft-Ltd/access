@@ -1,7 +1,7 @@
-package tz.co.asoft
+package access.system
 
-import tz.co.asoft.ISystemPermission.Companion.denied
-import tz.co.asoft.ISystemPermission.Companion.global
+import access.system.ISystemPermission.Companion.denied
+import access.system.ISystemPermission.Companion.global
 
 interface IPrinciple {
     val claims: Map<String, List<String>>

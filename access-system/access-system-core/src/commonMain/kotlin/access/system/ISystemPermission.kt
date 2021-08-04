@@ -1,4 +1,4 @@
-package tz.co.asoft
+package access.system
 
 interface ISystemPermission {
     val title: String

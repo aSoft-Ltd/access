@@ -1,18 +1,16 @@
-@file:Suppress("PackageDirectoryMismatch")
-
-package tz.co.asoft
+package access.system
 
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class ClientApp(
-    override var uid: String? = null,
-    override val name: String,
+    val uid: String,
+    val name: String,
     val secret: String,
     val account: UserAccount,
     val hosts: List<String>,
-    override var deleted: Boolean = false
-) : NamedEntity {
+    val deleted: Boolean = false
+) {
     enum class Permissions(
         override val title: String,
         override val details: String,

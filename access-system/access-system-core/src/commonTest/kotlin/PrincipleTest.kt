@@ -1,5 +1,8 @@
-import tz.co.asoft.*
-import tz.co.asoft.ISystemPermission.Companion.global
+import access.system.IPrinciple
+import access.system.User
+import access.system.ISystemPermission.Companion.global
+import access.system.UserAccount
+import expect.expect
 import kotlin.test.Test
 
 class PrincipleTest {

@@ -1,12 +1,10 @@
-@file:Suppress("PackageDirectoryMismatch")
-
-package tz.co.asoft
+package access.system
 
 import kotlinx.serialization.Serializable
 
 @Serializable
 class UserRef(
-    val uid: String?,
+    val uid: String,
     val name: String,
     val photoUrl: String?
 )

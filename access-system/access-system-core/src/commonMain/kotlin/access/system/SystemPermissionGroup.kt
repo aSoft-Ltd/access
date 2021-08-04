@@ -1,4 +1,4 @@
-package tz.co.asoft
+package access.system
 
 data class SystemPermissionGroup(
     val name: String,

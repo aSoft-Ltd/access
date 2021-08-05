@@ -5,8 +5,6 @@ package access.user
 import access.ISystemPermission
 import access.UserAccount
 import access.UserRef
-import contacts.Email
-import contacts.Phone
 import kotlinx.datetime.Clock
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
@@ -16,11 +14,9 @@ import kotlinx.serialization.builtins.LongAsStringSerializer
 data class User(
     val uid: String,
     val name: String,
-    val password: String,
-    val username: String? = null,
-    val emails: List<String> = listOf(),
-    val phones: List<String> = listOf(),
-    val photoUrl: String? = null,
+    val tag: String,
+    val contacts: Contacts,
+    val photoUrl: String?,
     val status: Status = Status.SignedOut,
     val accounts: List<UserAccount>,
     val verifiedEmails: List<String> = listOf(),
@@ -29,12 +25,6 @@ data class User(
     val lastSeen: Long = Clock.System.now().toEpochMilliseconds(),
     val deleted: Boolean = false
 ) {
-    init {
-        if ((emails + phones).isEmpty()) throw Exception("A user must have a phone/email")
-        emails.forEach { Email(it) }
-        phones.forEach { Phone(it) }
-    }
-
     enum class Status {
         Blocked,
         SignedIn,

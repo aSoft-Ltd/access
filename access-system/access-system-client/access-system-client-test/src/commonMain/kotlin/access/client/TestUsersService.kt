@@ -1,7 +1,8 @@
-package access
+package access.client
 
 import access.user.CreateUserParams
 import access.user.User
+import access.user.UserRef
 import later.Later
 
 class TestUsersService : UsersService {

@@ -1,7 +1,9 @@
 @file:Suppress("PackageDirectoryMismatch")
 
-package access
+package access.account
 
+import access.ISystemPermission
+import access.SystemPermissionGroup
 import kotlinx.serialization.Serializable
 
 @Serializable

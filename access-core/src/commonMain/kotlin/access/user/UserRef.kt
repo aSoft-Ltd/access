@@ -1,4 +1,4 @@
-package access
+package access.user
 
 import kotlinx.serialization.Serializable
 

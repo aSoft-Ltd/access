@@ -1,7 +1,7 @@
 package access.system
 
 import access.user.User
-import access.UserAccount
+import access.account.UserAccount
 import kotlinx.serialization.Serializable
 
 @Serializable

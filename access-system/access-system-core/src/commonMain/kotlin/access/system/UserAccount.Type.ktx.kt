@@ -1,6 +1,6 @@
 package access.system
 
-import access.UserAccount
+import access.account.UserAccount
 
 fun UserAccount.Type.permissions() = permissionGroups.flatMap { it.permissions }
 

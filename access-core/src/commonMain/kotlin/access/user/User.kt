@@ -3,8 +3,7 @@
 package access.user
 
 import access.ISystemPermission
-import access.UserAccount
-import access.UserRef
+import access.account.UserAccount
 import kotlinx.datetime.Clock
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
@@ -19,8 +18,7 @@ data class User(
     val photoUrl: String?,
     val status: Status = Status.SignedOut,
     val accounts: List<UserAccount>,
-    val verifiedEmails: List<String> = listOf(),
-    val verifiedPhones: List<String> = listOf(),
+    val verifiedContacts: Contacts,
     val registeredOn: Long = Clock.System.now().toEpochMilliseconds(),
     val lastSeen: Long = Clock.System.now().toEpochMilliseconds(),
     val deleted: Boolean = false

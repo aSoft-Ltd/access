@@ -1,7 +1,7 @@
 package access.system
 
 import access.ISystemPermission
-import access.UserAccount
+import access.account.UserAccount
 import access.ISystemPermission.Companion.denied
 import access.ISystemPermission.Companion.global
 

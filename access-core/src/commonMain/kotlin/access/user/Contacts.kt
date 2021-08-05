@@ -2,6 +2,7 @@ package access.user
 
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmStatic
+import kotlin.jvm.JvmSynthetic
 import contacts.Email as ValidEmail
 import contacts.Phone as ValidPhone
 
@@ -9,27 +10,22 @@ import contacts.Phone as ValidPhone
 sealed class Contacts {
 
     companion object {
+        @JvmSynthetic
         operator fun invoke(vararg values: String) = of(*values)
 
-        private fun instantiate(contact: String): Contacts {
-            val email = try {
-                Email(contact)
-            } catch (err: Throwable) {
-                null
-            }
-
-            val phone = try {
-                Phone(contact)
-            } catch (err: Throwable) {
-                null
-            }
-            return email ?: phone ?: throw IllegalArgumentException("$contact is not a valid contact")
-        }
+        private fun instantiate(contact: String): Contacts = try {
+            Email(contact)
+        } catch (err: Throwable) {
+            null
+        } ?: try {
+            Phone(contact)
+        } catch (err: Throwable) {
+            null
+        } ?: throw IllegalArgumentException("$contact is not a valid email or phone")
 
         @JvmStatic
         fun of(vararg values: String): Contacts {
             var contacts: Contacts = None
-            if (values.isEmpty()) return contacts
             for (value in values) {
                 contacts += instantiate(value)
             }

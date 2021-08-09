@@ -1,7 +1,7 @@
 package access.system
 
 import access.ISystemPermission
-import access.account.UserAccount
+import access.account.Account
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -9,7 +9,7 @@ data class ClientApp(
     val uid: String,
     val name: String,
     val secret: String,
-    val account: UserAccount,
+    val account: Account,
     val hosts: List<String>,
     val deleted: Boolean = false
 ) {

@@ -1,9 +1,9 @@
 package access.system
 
-import access.account.UserAccount
+import access.account.Account
 
-fun UserAccount.Type.permissions() = permissionGroups.flatMap { it.permissions }
+fun Account.Type.permissions() = permissionGroups.flatMap { it.permissions }
 
-fun UserAccount.Type.permissionNames() = permissions().map { it.title }
+fun Account.Type.permissionNames() = permissions().map { it.title }
 
-fun List<UserAccount.Type>.permissionGroups() = flatMap { it.permissionGroups }
+fun List<Account.Type>.permissionGroups() = flatMap { it.permissionGroups }

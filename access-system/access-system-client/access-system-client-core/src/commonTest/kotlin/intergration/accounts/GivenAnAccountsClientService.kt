@@ -1,13 +1,9 @@
-package intergration
+package intergration.accounts
 
 import access.account.CreateAccountParams
-import access.client.TestAccountsService
-import access.client.TestUsersService
-import access.user.UserRef
-import access.user.Contacts
-import access.user.CreateUserParams
-import access.user.EmailPassword
+import access.client.accounts.TestAccountsService
 import expect.expect
+import intergration.TESTER
 import later.await
 import test.asyncTest
 import kotlin.test.Test
@@ -17,7 +13,7 @@ class GivenAnAccountsClientService {
     val tester = TESTER
 
     @Test
-    fun should_easily_create_a_user_from_a_service() = asyncTest {
+    fun should_easily_create_an_account_from_a_service() = asyncTest {
         val params = CreateAccountParams(
             name = "Test User",
         )

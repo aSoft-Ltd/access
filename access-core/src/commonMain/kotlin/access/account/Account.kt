@@ -7,11 +7,11 @@ import access.SystemPermissionGroup
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UserAccount(
-    val uid: String? = null,
+data class Account(
+    val uid: String,
     val name: String,
     val photoUrl: String? = null,
-    val scope: String?,
+    val scope: String,
     val type: String,
     val deleted: Boolean = false
 ) {

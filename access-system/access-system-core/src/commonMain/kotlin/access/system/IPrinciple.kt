@@ -1,13 +1,13 @@
 package access.system
 
 import access.ISystemPermission
-import access.account.UserAccount
+import access.account.Account
 import access.ISystemPermission.Companion.denied
 import access.ISystemPermission.Companion.global
 
 interface IPrinciple {
     val claims: Map<String, List<String>>
-    val account: UserAccount
+    val account: Account
 
     fun has(permission: String, value: String): Boolean {
         val sysDev = claims["system.developer"]

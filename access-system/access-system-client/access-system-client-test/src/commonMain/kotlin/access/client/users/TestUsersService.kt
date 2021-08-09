@@ -1,5 +1,6 @@
-package access.client
+package access.client.users
 
+import access.client.users.UsersService
 import access.user.CreateUserParams
 import access.user.User
 import access.user.UserRef

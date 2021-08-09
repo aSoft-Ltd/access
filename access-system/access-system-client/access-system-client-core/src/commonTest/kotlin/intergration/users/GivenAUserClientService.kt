@@ -1,11 +1,11 @@
-package intergration
+package intergration.users
 
-import access.client.TestUsersService
-import access.user.UserRef
+import access.client.users.TestUsersService
 import access.user.Contacts
 import access.user.CreateUserParams
 import access.user.EmailPassword
 import expect.expect
+import intergration.TESTER
 import later.await
 import test.asyncTest
 import kotlin.test.Test

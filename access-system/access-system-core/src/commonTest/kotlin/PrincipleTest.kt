@@ -1,19 +1,19 @@
 import access.system.IPrinciple
 import access.user.User
 import access.ISystemPermission.Companion.global
-import access.account.UserAccount
+import access.account.Account
 import expect.expect
 import kotlin.test.Test
 
 class PrincipleTest {
 
-    private val testAccount = UserAccount(name = "Test", type = "Type", scope = null)
+    private val testAccount = Account(name = "Test", type = "Type", uid = "<test>", scope = "Scope")
 
     @Test
     fun should_not_have_any_privilege() {
         val principle = object : IPrinciple {
             override val claims: Map<String, List<String>> = mapOf()
-            override val account: UserAccount = testAccount
+            override val account: Account = testAccount
         }
         expect(principle.has(User.Permissions.Delete, global)).toBe(false)
     }
